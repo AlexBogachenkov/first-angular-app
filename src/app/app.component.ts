@@ -6,11 +6,13 @@ import {IProduct} from "./models/product";
 import {ProductsService} from "./services/products.service";
 import {Observable, tap} from "rxjs";
 import {GlobalErrorComponent} from "./components/global-error/global-error.component";
+import {FormsModule} from "@angular/forms";
+import {FilterProductsPipe} from "./pipes/filter-products.pipe";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TitleCasePipe, ProductComponent, NgForOf, NgIf, AsyncPipe, GlobalErrorComponent],
+  imports: [RouterOutlet, TitleCasePipe, ProductComponent, NgForOf, NgIf, AsyncPipe, GlobalErrorComponent, FormsModule, FilterProductsPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -20,6 +22,7 @@ export class AppComponent implements OnInit {
   // products: IProduct[] = []
   loading = false
   products$: Observable<IProduct[]>
+  term = ''
 
   constructor(private productsService: ProductsService) {
   }
