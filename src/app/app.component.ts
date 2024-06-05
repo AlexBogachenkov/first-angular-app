@@ -8,11 +8,13 @@ import {Observable, tap} from "rxjs";
 import {GlobalErrorComponent} from "./components/global-error/global-error.component";
 import {FormsModule} from "@angular/forms";
 import {FilterProductsPipe} from "./pipes/filter-products.pipe";
+import {ModalComponent} from "./components/modal/modal.component";
+import {CreateProductComponent} from "./components/create-product/create-product.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TitleCasePipe, ProductComponent, NgForOf, NgIf, AsyncPipe, GlobalErrorComponent, FormsModule, FilterProductsPipe],
+  imports: [RouterOutlet, TitleCasePipe, ProductComponent, NgForOf, NgIf, AsyncPipe, GlobalErrorComponent, FormsModule, FilterProductsPipe, ModalComponent, CreateProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
